@@ -22,7 +22,7 @@ const faqs = [
 export default function App() {
   return (
     <div>
-     <Accordion faqData={faqs}/>
+     <Accordion faqs={faqs}/>
     </div> 
   );
 }
