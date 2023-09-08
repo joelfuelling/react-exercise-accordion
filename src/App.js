@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './index.css'
 
 const faqs = [
   {
@@ -29,9 +30,9 @@ export default function App() {
 function Accordion({faqData}) {
   return (
     <>
-		<div className="accordian">
+		<div className="accordion">
 			{/* Below, i is passed to 'AccordianItem' and derived from the ternary to account for numebers 1-9, which would have a leading 0, wherease all others would not. */}
-			{faqData.map((faq, i) => <AccordianItem title={faq.title} num={i}  text={faq.text} /> )}
+			{faqData.map((faq, i) => <AccordianItem title={faq.title} num={i}  text={faq.text} key={i} /> )}
 		</div>
   </>
   )
@@ -48,7 +49,7 @@ function AccordianItem({num, title, text}) {
 		<>
 		<div className={isOpen ? "open item" : "item"}>
 			<p className="number">{num < 9 ? `0${num+1}` : num + 1}</p>
-			<p className={isOpen ? "text" : "text"}> {title}</p>
+			<p className="title"> {title}</p>
 			<p className="icon " onClick={handleIsOpen}> {isOpen ? '-' : '+'} </p>
 
 			{isOpen && <div className="content-box">{text}</div>}

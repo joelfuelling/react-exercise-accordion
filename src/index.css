@@ -71,7 +71,6 @@ p.icon {
 }
 
 .open .number,
-.open .text {
-  font-size: 24px;
+.open .title {
   color: #087f5b;
 }
